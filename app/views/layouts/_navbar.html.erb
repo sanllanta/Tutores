@@ -1,0 +1,20 @@
+<%= nav_bar responsive: true do %>
+    <%= menu_group do %>
+        <%= menu_item "Home" %>
+        <%= menu_divider %>
+        <%= menu_item "About Us" %>
+        <%= menu_item "Contact" %>
+        <%= drop_down "Vistas" do %>
+            <%= menu_item "Estudiantes", students_path %>
+            <%= menu_item "Tutores", tutors_path %>
+            <%= menu_item "Eventos", events_path %>
+        <% end %>
+    <% end %>
+    <%= menu_group pull: :right do %>
+    	<%= drop_down "Opciones" do %>
+    		<%= menu_item "Opcion 1" %>
+    		<%= menu_item "Opcion 2" %>
+    		<%= menu_item "Opcion 3" %>
+    	<% end %>
+    <% end %>
+<% end %>
