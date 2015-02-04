@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :students
+  devise_for :users
+  resources :users
 
   resources :events
 
-  resources :tutors
-
-  root 'students#index'
+  root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

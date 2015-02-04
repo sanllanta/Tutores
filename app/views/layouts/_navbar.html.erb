@@ -1,20 +1,20 @@
 <%= nav_bar responsive: true do %>
     <%= menu_group do %>
         <%= menu_item "Home" %>
-        <%= menu_divider %>
         <%= menu_item "About Us" %>
         <%= menu_item "Contact" %>
         <%= drop_down "Vistas" do %>
-            <%= menu_item "Estudiantes", students_path %>
-            <%= menu_item "Tutores", tutors_path %>
+            <%= menu_item "Usuarios", users_path %>
             <%= menu_item "Eventos", events_path %>
         <% end %>
     <% end %>
-    <%= menu_group pull: :right do %>
-    	<%= drop_down "Opciones" do %>
-    		<%= menu_item "Opcion 1" %>
-    		<%= menu_item "Opcion 2" %>
-    		<%= menu_item "Opcion 3" %>
+    <% if current_user %>
+        <%= menu_group pull: :right do %>
+            <%= drop_down "Opciones" do %>
+                <%= menu_item "Editar perfil", edit_user_registration_path %>
+                <li class="divider"></li>
+                <%= menu_item "Log Out", destroy_user_session_path, method: :delete %>
+            <% end %>
     	<% end %>
     <% end %>
 <% end %>

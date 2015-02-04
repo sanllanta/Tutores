@@ -1,0 +1,23 @@
+<div class="row">
+<div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="well well-lg">
+    <h2>Registro</h2>
+
+      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.text_field :first_name, autofocus: true %>
+        <%= f.text_field :last_name %>
+        <%= f.email_field :email %>
+        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.primary "Registro" %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                          root_path, :class => 'btn btn-default' %>
+        
+      <% end %>
+    </div>
+  </div>
+<div class="col-sm-2"></div>
+</div>
+
+<%= render "devise/shared/links" %>

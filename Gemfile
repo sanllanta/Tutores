@@ -33,7 +33,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 #Use bootstrap for the view's design
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap_form'
+gem 'font-awesome-rails'
+
+#Devise for user authentication
+gem 'devise'
+gem 'devise-i18n-views' #translations for devise
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

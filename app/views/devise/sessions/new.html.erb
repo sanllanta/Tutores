@@ -1,0 +1,15 @@
+<div class="row">
+<div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <h1>Inicia sesión</h1>
+    <div class="well well-lg">
+      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.email_field :email, prepend:'<i class="fa fa-envelope-o fa-fw"></i>'.html_safe, placeholder:'Correo electrónico', hide_label: true, autofocus: true %>
+        <%= f.password_field :password, prepend:'<i class="fa fa-key fa-fw"></i>'.html_safe, placeholder:'Contraseña', hide_label: true, autocomplete: "off" %>
+        <div><%= f.submit "Iniciar Sesión", class: "btn btn-primary btn-block" %></div>
+      <% end %>
+    </div>
+    <%= render "devise/shared/links" %>
+  </div>
+<div class="col-sm-3"></div>
+</div>
